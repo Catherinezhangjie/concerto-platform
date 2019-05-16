@@ -1,0 +1,27 @@
+par(mfrow = c(1, 3))
+# (1) Form
+CAT.Form <- data.frame(dat$Form_theta, dat$Form_se)
+plot(SasaoForm[,2], SasaoForm[,3], xlim=c(-3,3), ylim=c(0.1,0.7), xlab="", ylab="", pch = 20, cex = 0.25)
+par(new=T)
+plot(CAT.Form [,1], CAT.Form [,2], xlim=c(-3,3), ylim=c(0.1,0.7), xlab="Ability Estimate", ylab="Standard Error", main="Form", pch = 23, cex = 1)
+labels <- c("CAT (20 items)","Fixed-item (115 items)")
+legend("topleft", legend = labels, pch = c(23, 20))
+abline(h = 0.33, lwd=0.5)
+
+# (2) Meaning
+CAT.Meaning <- data.frame(dat$Meaning_theta, dat$Meaning_se)
+plot(SasaoMeaning[,2], SasaoMeaning[,3], xlim=c(-3,3), ylim=c(0.1,0.7), xlab="", ylab="", pch = 20, cex = 0.25)
+par(new=T)
+plot(CAT.Meaning[,1], CAT.Meaning[,2], xlim=c(-3,3), ylim=c(0.1,0.7), xlab="Ability Estimate", ylab="Standard Error", main="Meaning", pch = 23, cex = 1)
+labels <- c("CAT (15 items)","Fixed-item (73 items)")
+legend("topleft", legend = labels, pch = c(23, 20))
+abline(h = 0.33, lwd=0.5)
+
+# (3) Use
+CAT.Use <- data.frame(dat$Use_theta, dat$Use_se)
+plot(SasaoUse[,2], SasaoUse[,3], xlim=c(-3,3), ylim=c(0.1,0.7), xlab="", ylab="", pch = 20, cex = 0.25)
+par(new=T)
+plot(CAT.Use[,1], CAT.Use[,2], xlim=c(-3,3), ylim=c(0.1,0.7), xlab="Ability Estimate", ylab="Standard Error", main="Use", pch = 23, cex = 1)
+labels <- c("CAT (10 items)","Fixed-item (56 items)")
+legend("topleft", legend = labels, pch = c(23, 20))
+abline(h = 0.33, lwd=0.5)
